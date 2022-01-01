@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+
 from constraint import *
 
 # Each cell in the puzzle is assigned a letter from a-i arranged like so:
-# 
+#
 # a | b | c
 # --+---+---
 # d | e | f
@@ -31,10 +33,11 @@ problem.addConstraint(ExactSumConstraint(21), ('b', 'c', 'g', 'h'))
 problem.addConstraint(ExactSumConstraint(12), ('a', 'd', 'e'))
 problem.addConstraint(ExactSumConstraint(12), ('f', 'i'))
 
-# Solve it, just get the first solution if there are many (there should only be one if the problem is constructed correctly)
+# Solve it, just get the first solution if there are many
+# There should only be one if the problem is constructed correctly
 s = problem.getSolution()
 
-# Print the solution in a friendly waut
+# Print the solution in a friendly manner
 print(' %d | %d | %d' % (s['a'], s['b'], s['c']))
 print('---+---+---')
 print(' %d | %d | %d' % (s['d'], s['e'], s['f']))
